@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "623038213165",
+    "project_id": "rishtey-69a89",
+    "storage_bucket": "rishtey-69a89.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623038213165:android:b03b165f6fa21fb7dadca4",
+        "android_client_info": {
+          "package_name": "com.example.rishtey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623038213165-3mjjk911h6gmv8dehabhauksjdaevg4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3TVugxTCsS7SDFk91Qz2GBaAKjqYosyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623038213165-3mjjk911h6gmv8dehabhauksjdaevg4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
