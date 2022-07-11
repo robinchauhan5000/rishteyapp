@@ -9,74 +9,157 @@ import 'bottom_bar_item.dart';
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var listWidget = [
+    DashBoardScreen(),
+    MyInterest(),
+    Container(
+      alignment: Alignment.center,
+      child: const Text(
+        "Messages",
+        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      ),
+    ),
+    Container(
+      alignment: Alignment.center,
+      child: const Text(
+        "Settings",
+        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      ),
+    ),
+    Container(
+      alignment: Alignment.center,
+      child: const Text(
+        "Settings",
+        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      ),
+    ),
+  ];
   int _currentIndex = 0;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   final _inactiveColor = Colors.black;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer:  Drawer(
-    child: ListView(
-    padding: EdgeInsets.zero,
-      children: [
-        DrawerHeader(
-          child: Row(
+        endDrawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
             children: [
-              Container(
-
-                height: 100,
-                width: 85,
-
-                decoration: const BoxDecoration(shape: BoxShape.circle, image: DecorationImage(image: AssetImage("assets/pngIcons/Purple Login Screen.png"),fit: BoxFit.fill)),
-                child: Image.asset("assets/pngIcons/logo_icon 1.png",fit: BoxFit.fitWidth,),
+              DrawerHeader(
+                child: Row(
+                  children: [
+                    Container(
+                      height: 100,
+                      width: 85,
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  "assets/pngIcons/Purple Login Screen.png"),
+                              fit: BoxFit.fill)),
+                      child: Image.asset(
+                        "assets/pngIcons/logo_icon 1.png",
+                        fit: BoxFit.fitWidth,
+                      ),
+                    ),
+                    const Text(
+                      'Him Rishtey',
+                      style: TextStyle(color: Colors.black, fontSize: 25),
+                    ),
+                  ],
+                ),
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0)),
+                    color: Colors.white,
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage('assets/sideimg.jpg'))),
               ),
-              const Text(
-                'Him Rishtey',
-                style: TextStyle(color: Colors.black, fontSize: 25),
+              const ListTile(
+                title: Text(
+                  "Home",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 20),
+                ),
+                leading: Icon(Icons.home),
+              ),
+              const ListTile(
+                title: Text("My Membership",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 20)),
+                leading: Icon(Icons.home),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => QuickSearch()));
+                },
+                title: const Text("Quick Search",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 20)),
+                leading: const Icon(Icons.home),
+              ),
+              const ListTile(
+                title: Text("Advance Search",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 20)),
+                leading: Icon(Icons.home),
+              ),
+              const ListTile(
+                title: Text("Search By Profile Id"),
+                leading: Icon(Icons.home),
+              ),
+              const ListTile(
+                title: Text("Matching Profile"),
+                leading: Icon(Icons.home),
+              ),
+              const ListTile(
+                title: Text("ShortListed Profile"),
+                leading: Icon(Icons.home),
+              ),
+              const ListTile(
+                title: Text("My Contact"),
+                leading: Icon(Icons.home),
+              ),
+              const ListTile(
+                title: Text("Refer & Earn"),
+                leading: Icon(Icons.home),
+              ),
+              const ListTile(
+                title: Text("Success Stories"),
+                leading: Icon(Icons.home),
+              ),
+              const ListTile(
+                title: Text("Delete Profile"),
+                leading: Icon(Icons.home),
+              ),
+              const ListTile(
+                title: Text("Refund & Cancellation"),
+                leading: Icon(Icons.home),
               ),
             ],
           ),
-          decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(10.0),
-                  bottomRight: Radius.circular(10.0)),
-              color: Colors.white,
-              image: DecorationImage(
-                  fit: BoxFit.fill, image: AssetImage('assets/sideimg.jpg'))),
         ),
-const ListTile(title: Text("Home",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w800,fontSize: 20),),leading: Icon(Icons.home),),
-const ListTile(title: Text("My Membership",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w800,fontSize: 20)),leading: Icon(Icons.home),),
- ListTile(
-  onTap: (){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>QuickSearch()));
-  },
-  title: const Text("Quick Search",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w800,fontSize: 20)),leading: const Icon(Icons.home),),
-const ListTile(title: Text("Advance Search",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w800,fontSize: 20)),leading: Icon(Icons.home),),
-const ListTile(title: Text("Search By Profile Id"),leading: Icon(Icons.home),),
-const ListTile(title: Text("Matching Profile"),leading: Icon(Icons.home),),
-const ListTile(title: Text("ShortListed Profile"),leading: Icon(Icons.home),),
-const ListTile(title: Text("My Contact"),leading: Icon(Icons.home),),
-const ListTile(title: Text("Refer & Earn"),leading: Icon(Icons.home),),
-const ListTile(title: Text("Success Stories"),leading: Icon(Icons.home),),
-const ListTile(title: Text("Delete Profile"),leading: Icon(Icons.home),),
-const ListTile(title: Text("Refund & Cancellation"),leading: Icon(Icons.home),),
-
-      ],
-    ),
-    ),
-      key: _scaffoldKey,
-        body: getBody(),
-        bottomNavigationBar: _buildBottomBar()
-    );
+        key: _scaffoldKey,
+        body: listWidget[_currentIndex],
+        bottomNavigationBar: _buildBottomBar());
   }
 
-  Widget _buildBottomBar(){
+  Widget _buildBottomBar() {
     return CustomAnimatedBottomBar(
       containerHeight: 70,
       backgroundColor: primaryColor,
@@ -123,14 +206,15 @@ const ListTile(title: Text("Refund & Cancellation"),leading: Icon(Icons.home),),
         BottomNavyBarItem(
           key: _scaffoldKey,
           icon: GestureDetector(
-              onTap: (){
+              onTap: () {
                 _scaffoldKey.currentState!.openEndDrawer();
               },
               child: const Icon(Icons.settings)),
           title: GestureDetector(
-              onTap: (){
+              onTap: () {
                 _scaffoldKey.currentState!.openEndDrawer();
-              },child: const Text('Menu')),
+              },
+              child: const Text('Menu')),
           activeColor: Colors.white,
           inactiveColor: _inactiveColor,
           textAlign: TextAlign.center,
@@ -139,37 +223,12 @@ const ListTile(title: Text("Refund & Cancellation"),leading: Icon(Icons.home),),
     );
   }
 
-
-  Widget getBody() {
-    List<Widget> pages = [
-      Container(
-        alignment: Alignment.center,
-        child:DashBoardScreen()
-      ),
-      Container(
-        alignment: Alignment.center,
-        child: MyInterest()
-      ),
-      Container(
-        alignment: Alignment.center,
-        child: const Text("Messages",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-      ),
-      Container(
-        alignment: Alignment.center,
-        child: const Text("Settings",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-      ),
-      Container(
-        alignment: Alignment.center,
-        child: const Text("Settings",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-      ),
-    ];
-    return IndexedStack(
-      index: _currentIndex,
-      children: pages,
-    );
-  }
-
+  // Widget getBody() {
+  //
+  //   return IndexedStack(
+  //     index: _currentIndex,
+  //     children: listWidget[_currentIndex],
+  //   );
+  // }
 
 }
-
-
